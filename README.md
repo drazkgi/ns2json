@@ -9,7 +9,7 @@ Name Server to JavaScript Object Notation is a Python script to converts and sav
 Install the module by [pip][1] (check [how to use pip][2]):
 
 ```
-$ py -m pip install ns2json
+py -m pip install ns2json
 ```
 
 
