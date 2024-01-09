@@ -9,14 +9,14 @@ Name Server to JavaScript Object Notation is a Python script to converts and sav
 Install the module by [pip][1] (check [how to use pip][2]):
 
 ```
-$ python3 -m pip install ns2json
+$ py -m pip install ns2json
 ```
 
 
 ## How to use
 
 ```python
-python3 -m ns2json [domain] [dns] [path]
+py -m ns2json [domain] [dns] [path]
 ```
 
 || Domain | DNS | Path |
@@ -30,9 +30,9 @@ python3 -m ns2json [domain] [dns] [path]
 ## Examples
 
 ```python
-python3 -m ns2json google.com 8.8.8.8 C:\Users\Name\Desktop
-python3 -m ns2json google.com 8.8.8.8
-python3 -m ns2json google.com C:\Users\Name\Desktop
+py -m ns2json google.com 8.8.8.8 C:\Users\Name\Desktop
+py -m ns2json google.com 8.8.8.8
+py -m ns2json google.com C:\Users\Name\Desktop
 
 # Output file name: google.com.json
 ```
