@@ -3,17 +3,16 @@
 """
 
 import sys
-from utils.check_sys import is_correct_platform
-from utils.get_set_args import get_args_from_cli_line, set_args_from_cli_to_result
-from utils.export_data import export_result_to_json
-from dns.pull_data import pull_data_from_dns
-from dns.format_data import format_data_from_dns
+from .utils.get_set_args import get_args_from_cli_line, set_args_from_cli_to_result
+from .utils.export_data import export_result_to_json
+from .dns.pull_data import pull_data_from_dns
+from .dns.format_data import format_data_from_dns
 
 
 def main() -> None:
     """A main script function.
 
-    """    
+    """ 
 
     dns_types = ['a', 'aaaa', 'mx', 'ns', 'soa', 'txt']
     path_to_save_json = 'None'
@@ -63,13 +62,3 @@ def main() -> None:
     except:
         print('Error: Cannot save the JSON file in a currently path.')
         sys.exit(1)
-
-
-if __name__ == '__main__':
-    try:
-        is_correct_platform()
-    except:
-        print('Error: The script can currently run only on the Windows platform.')
-        sys.exit(1)
-
-    main()
