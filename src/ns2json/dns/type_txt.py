@@ -17,7 +17,7 @@ def extract_type_txt(data: list) -> list:
     """
 
     type_txt_data = []
-    prefix = 'Server:|Address:'
+    prefix = 'Server:|Address:|Non-authoritative answer:'
     regexp_prefix = '^' + prefix + '.*'
     for value in data:
         if not re.match(regexp_prefix, value):

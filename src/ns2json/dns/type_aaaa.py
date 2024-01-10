@@ -21,8 +21,9 @@ def extract_type_aaaa(data: list, dns_resolver: str) -> list:
     for item in data:
         regexp_dns_resolver = '.*' + dns_resolver
         regexp_type_aaaa = '.*[0-9a-f]{1,4}:{1,2}.*:[0-9a-f]{1,4}$'
-        if not re.match(regexp_dns_resolver, item) \
-           and re.match(regexp_type_aaaa, item):
+        if re.match(regexp_dns_resolver, item):
+           continue
+        if re.match(regexp_type_aaaa, item):
             type_aaaa_data.append(item)
 
     formated_type_aaaa_data = []

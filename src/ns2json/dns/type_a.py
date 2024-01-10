@@ -19,10 +19,11 @@ def extract_type_a(data: list, dns_resolver: str) -> list:
 
     type_a_data = []
     for item in data:
-        regexp_dns_resolver = '.*' + dns_resolver
-        regexp_type_a = '.*([0-9]{1,3}[.]){3}[0-9]{1}'
-        if not re.match(regexp_dns_resolver, item) \
-           and re.match(regexp_type_a, item):
+        regexp_dns_resolver = '.*' + dns_resolver +'$'
+        regexp_type_a = '.*([0-9]{1,3}[.]){3}[0-9]{1,3}'
+        if re.match(regexp_dns_resolver, item):
+            continue
+        if re.match(regexp_type_a, item):
             type_a_data.append(item)
 
     formated_type_a_data = []
@@ -32,7 +33,7 @@ def extract_type_a(data: list, dns_resolver: str) -> list:
             formated_type_a_data.append(re.sub(regexp_prefix, '', item))
         else:
             formated_type_a_data.append(item)
-
+            
     return formated_type_a_data
 
 

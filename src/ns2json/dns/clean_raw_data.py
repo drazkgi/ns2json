@@ -38,10 +38,14 @@ def clean_stdout_for_type_txt(data: str, address: str) -> list:
 
     data_no_multiple_new_lines = re.sub('\n+', '\n', data)
     data_no_multiple_tabs = re.sub('\t+', '', data_no_multiple_new_lines)
-    data_no_new_line_on_end = re.sub('\n$', '', data_no_multiple_tabs)
-    regexp_special_characters = '"' + '|' + address + 'text =\n'
+    data_no_multiple_spaces = re.sub(' {2,}', '', data_no_multiple_tabs)
+    data_no_new_line_on_end = re.sub('^\n|\n$', '', data_no_multiple_spaces)
+    regexp_special_characters = address + 'text =\n'
     data_no_extra_characters = re.sub(
         regexp_special_characters, '', data_no_new_line_on_end)
     clean_splited_data = data_no_extra_characters.split('\n')
+    final_clean_data = []
+    for i in clean_splited_data:
+        final_clean_data.append(re.sub('^"|"$', '', i))
 
-    return clean_splited_data
+    return final_clean_data
