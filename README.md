@@ -4,15 +4,6 @@
 Name Server to JavaScript Object Notation is a Python script to converts and saves a data from a DNS response to a JSON file.
 
 
-## Installing
-
-Install the module by [pip][1] (check [how to use pip][2]):
-
-```
-py -m pip install ns2json
-```
-
-
 ## How to use
 
 ```python
@@ -44,6 +35,3 @@ py -m ns2json google.com C:\Users\Name\Desktop
 
 ## To Do
 - Linux version.
-
-[1]: https://pypi.org/ 
-[2]: https://pip.pypa.io/en/stable/getting-started/
